@@ -22,6 +22,14 @@ router.get("/", (req, res) => {
   res.json(users); //send the users array as a JSON response
 });
 
-router.post("/", (req, res) => {});
+router.post("/", (req, res) => {
+  // console.log("POST ROUTE REACHED");
+  const user = req.body;
+  // console.log(req.body);
+
+  users.push(user);
+  res.send(`User with the name ${user.firstName} added to the database`);
+  // res.send("POST ROUTE REACHED");
+});
 
 export default router;
