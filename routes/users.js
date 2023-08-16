@@ -21,4 +21,10 @@ router.post("/", (req, res) => {
   res.send(`User with the name ${user.firstName} added to the database`);
 });
 
+// /users/2 => req.params (id: 2)
+router.get("/:id", (req, res) => {
+  console.log(req.params);
+  res.send(req.params);
+});
+
 export default router;
