@@ -1,10 +1,13 @@
+require("dotenv").config(); //cpmmon js
 const express = require("express"); //import express, commonjs
 // import express form 'express'; //es modules
 const path = require("path"); //common js
 
 const app = express(); //create express application
-const port = 8081; // init port ==> hardcode
+const port = process.env.PORT || 8888; // init port
+console.log(process.env);
 
+const hostname = process.env.HOST_NAME;
 //config template engine
 app.set("views", path.join(__dirname, "views/"));
 app.set("view engine", "ejs");
@@ -24,6 +27,6 @@ app.get("/vanguyendev", (req, res) => {
   res.render("sample.ejs");
 });
 
-app.listen(port, () => {
+app.listen(port, hostname, () => {
   console.log(`Example app listening on port ${port}`);
 });
