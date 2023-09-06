@@ -15,7 +15,7 @@ app.set("view engine", "ejs");
 //khai bao routes
 //req and res are 2 objects in Nodejs environment
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Hello World with van nguyen and Nodemon!");
 });
 
 app.get("/abc", (req, res) => {
