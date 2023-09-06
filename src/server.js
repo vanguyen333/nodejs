@@ -12,6 +12,9 @@ const hostname = process.env.HOST_NAME;
 app.set("views", path.join(__dirname, "views/"));
 app.set("view engine", "ejs");
 
+//confit static file
+app.use(express.static(path.join(__dirname, "public")));
+
 //khai bao routes
 //req and res are 2 objects in Nodejs environment
 app.get("/", (req, res) => {
