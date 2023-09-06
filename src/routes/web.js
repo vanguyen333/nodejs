@@ -1,19 +1,17 @@
 const express = require("express");
-
+const {
+  getHomepage,
+  getABC,
+  getHoiDanIT,
+} = require("../controllers/homeController");
 const router = express.Router();
 
 //req and res are 2 objects in Nodejs environment
-router.get("/", (req, res) => {
-  res.send("Hello World with van nguyen and Nodemon!");
-});
+//router.method('/route',handler)
+router.get("/", getHomepage);
 
-router.get("/abc", (req, res) => {
-  res.send("Chec ABC");
-});
+router.get("/abc", getABC);
 
-router.get("/vanguyendev", (req, res) => {
-  // res.send("<h1>vanguyendev</h1>");
-  res.render("sample.ejs");
-});
+router.get("/hoidanit", getHoiDanIT);
 
 module.exports = router; //export default
